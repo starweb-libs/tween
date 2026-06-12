@@ -1,27 +1,37 @@
 {
-  "name": "starweb-tween",
+  "name": "@starweb-libs/tween",
   "description": "Frame-driven tween manager with easing for the browser",
   "author": "Mason L'Etoile",
+  "version": "0.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/starweb-libs/tween"
+    "url": "git+https://github.com/starweb-libs/tween.git"
   },
-  "keywords": ["tween", "animation", "easing", "typescript", "browser"],
-  "version": "1.0.0",
+  "homepage": "https://github.com/starweb-libs/tween#readme",
+  "bugs": {
+    "url": "https://github.com/starweb-libs/tween/issues"
+  },
+  "keywords": ["tween", "animation", "easing", "typescript", "browser", "starweb"],
   "type": "module",
-  "devDependencies": {
-    "typescript": "~6.0.2"
-  },
+  "devDependencies": { "typescript": "~6.0.2" },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "prepare": "tsc -p tsconfig.build.json"
+    "prepare": "npm run build"
   },
-  "files": ["dist", "src"],
+  "files": ["dist"],
   "exports": {
-    "./*.js": {
-      "types": "./dist/*.d.ts",
-      "import": "./dist/*.js"
+    "./easing.js": {
+      "types": "./dist/easing.d.ts",
+      "import": "./dist/easing.js"
+    },
+    "./manager.js": {
+      "types": "./dist/manager.d.ts",
+      "import": "./dist/manager.js"
+    },
+    "./types.js": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js"
     }
   }
 }
