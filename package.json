@@ -14,24 +14,30 @@
   },
   "keywords": ["tween", "animation", "easing", "typescript", "browser", "starweb"],
   "type": "module",
-  "devDependencies": { "typescript": "~6.0.2" },
+  "devDependencies": {
+    "typescript": "~6.0.2",
+    "tsdown": "^0.22.0"
+  },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsdown",
     "prepare": "npm run build"
   },
   "files": ["dist"],
   "exports": {
     "./easing.js": {
-      "types": "./dist/easing.d.ts",
-      "import": "./dist/easing.js"
+      "types": "./dist/easing.d.mts",
+      "@starweb-libs/source": "./src/easing.ts",
+      "import": "./dist/easing.mjs"
     },
     "./manager.js": {
-      "types": "./dist/manager.d.ts",
-      "import": "./dist/manager.js"
+      "types": "./dist/manager.d.mts",
+      "@starweb-libs/source": "./src/manager.ts",
+      "import": "./dist/manager.mjs"
     },
     "./types.js": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/types.js"
+      "types": "./dist/types.d.mts",
+      "@starweb-libs/source": "./src/types.ts",
+      "import": "./dist/types.mjs"
     }
   }
 }
